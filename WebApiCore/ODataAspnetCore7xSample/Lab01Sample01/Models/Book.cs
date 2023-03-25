@@ -13,7 +13,17 @@ namespace Lab01Sample01.Models
         [System.ComponentModel.DefaultValue(true)] // Setting default values in the model.
         public bool ForKids { get; set; }
         public Author MainAuthor { get; set; }
+
+
+        public IEnumerable<Translator> ClassList { get; set; }
+
+
+        public IEnumerable<string> StringList { get; set; }
+
+        //[Contained]
         public IList<Author> Authors { get; set; }
+        
+        
         [Contained]
         public IList<Translator> Translators { get; set; }
     }

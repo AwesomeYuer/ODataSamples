@@ -1,0 +1,17 @@
+### ok
+GET http://localhost:5000/odata/books
+
+### ok
+GET http://localhost:5000/odata/books?$expand=authors,Translators&$filter=Translators/any(x:x/TranslatorID%20ne%201)
+
+
+### ok
+GET http://localhost:5000/odata/books?$filter=stringlist/any(x:x%20eq%20'a')
+
+### ok
+GET http://localhost:5000/odata/books?$count=true&$expand=authors,mainauthor&$filter=MainAuthor/Addresses/any(x:x/county%20eq%20%27LangFang%27)
+
+
+### failed
+GET https://gallery.windowsazure.cn/microsoft.gallery/galleryitems?api-version=2015-10-01&includepreview=true&$top=10&$filter=categoryIds/any(x:x%20eq%20'0')
+
